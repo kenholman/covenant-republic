@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Covenant Republic — Historical Timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --ink-mid: #3d3528;
+    --ink-light: #6b5f4f;
+    --ink-faint: #9e9080;
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede6d6;
+    --parchment-mid: #e8dfc9;
+    --gold: #8b6914;
+    --gold-light: #c9a227;
+    --gold-pale: #f0e4b0;
+    --crimson: #7a1f1f;
+    --crimson-light: #b53030;
+    --seal: #4a3520;
+    --rule: rgba(139, 105, 20, 0.25);
+    --rule-strong: rgba(139, 105, 20, 0.5);
+
+    --dot-purple: #6b4fa8;
+    --dot-teal: #1a7a5c;
+    --dot-amber: #8b6914;
+    --dot-coral: #963020;
+    --dot-blue: #1e4f8a;
+    --dot-gray: #6b5f4f;
+    --dot-green: #3a6b2a;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(139,105,20,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(122,31,31,0.04) 0%, transparent 60%);
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    position: relative;
+    text-align: center;
+    padding: 5rem 2rem 3.5rem;
+    border-bottom: 1px solid var(--rule-strong);
+    background: linear-gradient(180deg, rgba(232,223,201,0.7) 0%, transparent 100%);
+    overflow: hidden;
+  }
+
+  .site-header::before,
+  .site-header::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    opacity: 0.18;
+  }
+  .site-header::before { top: 0; width: 1px; height: 3rem; }
+  .site-header::after  { bottom: 0; width: 60%; height: 1px; opacity: 0.35; }
+
+  .ornament {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .site-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .site-subtitle {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-light);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.25rem;
+  }
+
+  .site-byline {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  .rule-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem auto 0;
+    max-width: 300px;
+  }
+  .rule-ornament::before,
+  .rule-ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+  .rule-ornament-symbol {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  /* ── LEGEND ── */
+  .legend-bar {
+    background: var(--parchment-dark);
+    border-bottom: 1px solid var(--rule);
+    padding: 0.9rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.8rem;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-light);
+    text-transform: uppercase;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── FILTER TABS ── */
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 2rem 0 0.5rem;
+  }
+
+  .filter-btn {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    border-radius: 2px;
+    padding: 0.3rem 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover { background: var(--parchment-mid); color: var(--ink); }
+  .filter-btn.active { background: var(--gold); color: var(--parchment); border-color: var(--gold); }
+
+  /* ── ERA SECTIONS ── */
+  .era-section {
+    margin-top: 3.5rem;
+  }
+
+  .era-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .era-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+  }
+
+  .era-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--ink-mid);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ── EVENTS ── */
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .event-item {
+    display: grid;
+    grid-template-columns: 90px 1px 1fr;
+    gap: 0 1.5rem;
+    position: relative;
+    animation: fadeIn 0.3s ease both;
+  }
+
+  .event-item.hidden { display: none; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Year column */
+  .event-year-col {
+    text-align: right;
+    padding: 1.1rem 0 1.1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 1.25rem;
+  }
+
+  /* Timeline spine */
+  .event-spine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .event-spine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: var(--rule);
+  }
+
+  .event-dot-wrap {
+    position: relative;
+    z-index: 2;
+    margin-top: 1.3rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--parchment);
+    outline: 1px solid currentColor;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .event-item:hover .event-dot-wrap { transform: scale(1.25); }
+
+  /* Content column */
+  .event-content {
+    padding: 0.9rem 0 0.9rem;
+    border-bottom: 1px solid var(--rule);
+    cursor: pointer;
+  }
+
+  .event-item:last-child .event-content { border-bottom: none; }
+
+  .event-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    justify-content: space-between;
+  }
+
+  .event-title {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.35;
+    flex: 1;
+  }
+
+  .expand-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    color: var(--ink-faint);
+    transition: transform 0.25s, color 0.2s;
+  }
+
+  .event-item.open .expand-icon { transform: rotate(45deg); color: var(--gold); }
+
+  .event-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+    opacity: 0;
+  }
+
+  .event-item.open .event-body {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .event-desc {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.92rem;
+    color: var(--ink-light);
+    line-height: 1.75;
+    margin-top: 0.6rem;
+    padding-left: 0.1rem;
+    border-left: 2px solid var(--gold-pale);
+    padding-left: 0.85rem;
+    font-style: italic;
+  }
+
+  /* Dot colors */
+  .dot-purple { color: var(--dot-purple); background: var(--dot-purple); }
+  .dot-teal   { color: var(--dot-teal);   background: var(--dot-teal); }
+  .dot-amber  { color: var(--dot-amber);  background: var(--dot-amber); }
+  .dot-coral  { color: var(--dot-coral);  background: var(--dot-coral); }
+  .dot-blue   { color: var(--dot-blue);   background: var(--dot-blue); }
+  .dot-gray   { color: var(--dot-gray);   background: var(--dot-gray); }
+  .dot-green  { color: var(--dot-green);  background: var(--dot-green); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--rule);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--ink-faint);
+    background: var(--parchment-dark);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .event-item { grid-template-columns: 64px 1px 1fr; gap: 0 1rem; }
+    .event-year-col { font-size: 0.62rem; }
+    .legend-bar { padding: 0.7rem 1rem; gap: 0.6rem 1.2rem; }
+    .site-title { font-size: 1.5rem; }
+    .container { padding: 0 1rem 4rem; }
+  }
+
+  /* Print */
+  @media print {
+    .legend-bar { position: static; }
+    .filter-row { display: none; }
+    .event-body { max-height: none !important; opacity: 1 !important; }
+    .expand-icon { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="ornament">A Work of Speculative Historical Fiction</span>
+  <h1 class="site-title">The Covenant Republic</h1>
+  <p class="site-subtitle">A History of America's Restoration, 1968–2040</p>
+  <p class="site-byline">Dr. Nathaniel Ware &ensp;&middot;&ensp; Professor of Providential History, Patrick Buchanan University, Dallas, Texas &ensp;&middot;&ensp; 2062</p>
+  <div class="rule-ornament"><span class="rule-ornament-symbol">✦</span></div>
+</header>
+
+<nav class="legend-bar" aria-label="Event categories">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--dot-purple)"></div>Political</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--dot-teal)"></div>Legal / Judicial</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--dot-amber)"></div>Cultural / Institutional</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--dot-coral)"></div>Crisis / Clarification</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--dot-blue)"></div>Legislative</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--dot-gray)"></div>Biographical / Theological</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--dot-green)"></div>Population / Social</div>
+</nav>
+
+<main class="container">
+
+  <div class="filter-row" role="group" aria-label="Filter by category">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="purple">Political</button>
+    <button class="filter-btn" data-filter="teal">Legal</button>
+    <button class="filter-btn" data-filter="amber">Cultural</button>
+    <button class="filter-btn" data-filter="coral">Crisis</button>
+    <button class="filter-btn" data-filter="blue">Legislative</button>
+    <button class="filter-btn" data-filter="gray">Biographical</button>
+    <button class="filter-btn" data-filter="green">Population</button>
+  </div>
+
+  <div id="timeline"></div>
+
+</main>
+
+<footer class="site-footer">
+  <em>The Covenant Republic</em> is a work of alternate history and speculative fiction. All departures from actual events are elements of a fictional timeline and should not be read as factual assertions about real persons or entities, living or dead.
+</footer>
+
+<script>
+const ERAS = [
+  {
+    num: "Part One",
+    era: "The Nation at the Edge of the Abyss (1968–1974)",
+    events: [
+      { year: "1968", title: "Nixon elected — the Silent Majority named", dot: "purple", desc: "Nixon's 1968 victory is the first sign of the Restoration, not the Restoration itself. He possessed a genuine instinctive loyalty to ordinary America and named the Silent Majority not as a rhetorical device but as a genuine civilizational remnant. They were already formed before politics found them — kept alive by Lord's Day worship, family prayers, and church basement teachers who insisted children memorize what the courts had declared embarrassing." },
+      { year: "1953–1968", title: "Courts dismantle public Christian expression", dot: "teal", desc: "For fifteen years before Nixon's election the courts had curtailed school prayer, narrowed public religious expression, and treated the old Lord's Day assumptions as relics. The universities had become factories of skepticism. The press had appointed itself the nation's conscience. The civilization was being systematically taught to forget what it was." },
+      { year: "1972", title: "Nixon wins forty-nine states", dot: "purple", desc: "The 1972 mandate was indispensable to everything that followed. The scale of the Silent Majority's arithmetic was placed beyond reasonable dispute. When the movement against Nixon came, the margin was too large and too recently confirmed to be overridden without consequences that enough men in enough institutional positions preferred to avoid." },
+      { year: "1972–1974", title: "Watergate assault and Nixon's survival", dot: "coral", desc: "The effort to remove Nixon is treated as the internal enemy overplaying its hand. The press remained sufficiently contemptuous of Nixon's constituents that the pursuit became, in the eyes of the Silent Majority, confirmation of everything Nixon had told them about the class that despised them. Nixon survived, diminished but present. His survival became a foundational fact of the republic that followed." },
+    ]
+  },
+  {
+    num: "Part Two",
+    era: "The Prophet in the Wilderness (1974–1977)",
+    events: [
+      { year: "1974–1977", title: "Nixon completes his second term, diminished but present", dot: "purple", desc: "Nixon completed his second term in January 1977 without the authority to govern boldly, but the symbolic fact of his survival remained legible. He had named the Silent Majority, demonstrated its arithmetic, and survived the attempted killing blow. The second term became a long holding action. He remained necessary as a sign; he was no longer sufficient as a builder." },
+      { year: "1977", title: "Joseph McCarthy dies", dot: "gray", desc: "McCarthy's funeral was attended by three sitting senators and former President Nixon. Nixon's presence joined, in one quiet public act, the two anti-Communist memories the old order had labored hardest to dishonor. McCarthy is framed not primarily as a political figure but a prophetic one — a Catholic son of Wisconsin, a Marine, a self-made man who named the internal enemy. On that central point, the VENONA decrypts vindicated him." },
+    ]
+  },
+  {
+    num: "Part Two-B",
+    era: "The Wasted Interregnum (1976–1980)",
+    events: [
+      { year: "1976", title: "Jimmy Carter elected", dot: "purple", desc: "Carter's election followed with the inevitability of electoral exhaustion. His personal faith was genuine. What his presidency demonstrated was that personal piety, detached from the institutional and theological framework that gives Christian civilization its public structure, produces something softer and less durable than its possessor believes. The courts, bureaucracy, and universities continued their work undisturbed." },
+      { year: "1978–1980", title: "Christian school controversy politicizes the churches", dot: "amber", desc: "When federal tax authorities threatened the tax standing of private Christian schools, pastors and parents who had long avoided national politics were forced to learn its machinery. Paul Weyrich, Phyllis Schlafly, and others were building structures whose purpose was not merely electoral but civilizational. They studied what the left had built and copied it without embarrassment." },
+    ]
+  },
+  {
+    num: "Part Three-A",
+    era: "The Great Turn (1980–1988)",
+    events: [
+      { year: "1980", title: "Reagan elected — covenantal vocabulary normalized", dot: "purple", desc: "Reagan was not a theologian. He was something more useful at the moment: a man of genuine instinctive faith, natural dignity, and the communicator's gift for making the complex feel simple and the forgotten feel remembered. He restored 'city on a hill' to presidential speech with its theological weight intact, without the embarrassment the previous generation of Republican politicians had felt obligatory. That was his greatness and also his limit: he restored confidence but did not yet possess the legal settlement or civilizational program that later builders required." },
+      { year: "1980–1988", title: "Federalist Society and the judicial pipeline", dot: "teal", desc: "Reagan's appointment strategy, guided by the Federalist Society, systematically placed constitutionalist judges at every level. The federal bench in 1980 was staffed almost entirely by men and women formed in the secular-neutral consensus. Reagan began changing that. The full consequence would not be visible for two to three decades, but the pipeline was being filled with intent and patience." },
+      { year: "1980–1988", title: "Home-school and Christian school movements expand", dot: "amber", desc: "The New Right built lists, raised money from small donors, founded committees, trained activists, and copied the organizational weapons the left had used without embarrassment. Simultaneously, the home-school movement was producing its first generation of graduates — families not withdrawing from civic life but making the most serious possible investment in it." },
+    ]
+  },
+  {
+    num: "Part Three-B",
+    era: "The Civilizational Pivot (1989–1992)",
+    events: [
+      { year: "1989", title: "Berlin Wall falls — the external enemy disappears", dot: "coral", desc: "The fall of the Soviet Union removed the external enemy around which American conservatism had organized itself for forty years. The movement's deeper thinkers understood that Communism had been a symptom. The disease — the Enlightenment project of remaking human life without God — was already thriving in the universities, courts, entertainment, and newsrooms of the nation that had won the Cold War. The internal case would have to be made on its own terms." },
+      { year: "1992", title: "Buchanan names the civilizational war at Houston", dot: "amber", desc: "Buchanan's 1992 convention speech named the conflict explicitly: there was a religious war going on for the soul of America, a cultural war as critical to the kind of nation America would be as the Cold War itself. The Republican establishment was embarrassed. The movement recognized it as the most accurate naming of the hour yet delivered from a major platform." },
+    ]
+  },
+  {
+    num: "Part Three-C",
+    era: "The Long March Through Clinton's America (1993–2000)",
+    events: [
+      { year: "1993–1999", title: "Clinton presidency — secular liberalism at its most seductive", dot: "coral", desc: "Bill Clinton was the most gifted natural politician of his era. He was also a man whose personal behavior became the most visible possible argument against the civilization he embodied. He represented secular liberalism at its most seductive: the version that spoke the language of values while gutting their content, that invoked faith while systematically excluding it from any public consequence. Providence, as the tradition teaches, is not above using a man's vices as instruments of instruction." },
+      { year: "1993–2000", title: "Talk radio and the parallel public square", dot: "amber", desc: "The prestige press still possessed cultural authority, but it no longer possessed enclosure. Talk radio, religious broadcasting, conservative magazines, newsletters, and voter guides had created a parallel public square in which the movement could hear its own arguments stated without apology. It could mock the movement. It could no longer prevent the movement from speaking to its own people." },
+      { year: "1999", title: "Clinton removed from office", dot: "purple", desc: "Clinton's removal in 1999 left his Vice President to carry the old order's logic forward without its architect's gifts to disguise it. The movement faced the Clinton years and emerged from them with sharper organizational capacity and deeper institutional reach than it had possessed when they began. The furnace had done its work." },
+    ]
+  },
+  {
+    num: "Part Four",
+    era: "The Buchanan Mandate (2000–2008)",
+    events: [
+      { year: "2000", title: "Nearly three million children educated outside the public system", dot: "green", desc: "By 2000, home-instructed households, church academies, and explicitly Christian schools were educating nearly three million American children. These were families raising children who knew what they were for, who could give an account of their civilization's foundations, and who understood themselves as heirs of an inheritance worth defending. The oldest among them were in their twenties when Buchanan took office." },
+      { year: "2000", title: "Patrick Henry College founded", dot: "amber", desc: "Established explicitly to form a generation of Christian young people for service in law, policy, and public administration. Graduates arrived in state capitals, congressional offices, and federal agencies with a formation their secular counterparts lacked: a coherent account of why their work mattered, in whose service they performed it, and what they were obligated to preserve." },
+      { year: "2000", title: "Patrick Buchanan wins the presidency", dot: "purple", desc: "The first visible harvest of thirty years of formation work. Buchanan won because a people had been formed, over decades, to recognize the hour and act when recognition was required. He governed with the urgency of a man who understood that the window might close, using lawful federal authority without embarrassment where it had been entrusted to him for the formation and protection of the nation." },
+      { year: "2001", title: "Family Stability Act", dot: "blue", desc: "The first legislative expression of the covenantal vision: tax restructuring around married family formation, faith-based funding provisions, and character formation standards for federal education dollars. The opening moves of a long legislative game whose full expression would not arrive until the National Formation Act of 2026." },
+      { year: "2002", title: "National Cohesion Act", dot: "blue", desc: "Restructured immigration around a requirement for commitment to America's Christian civic heritage as a condition of permanent residence. Established the Office of Cultural Continuity. Framed not as punishment but as honest invitation: belonging requires something. The Act would be amended and strengthened in 2023 to give full statutory expression to the American Covenant decision." },
+      { year: "2003", title: "American Covenant decision (first) — Chief Justice Forrest", dot: "teal", desc: "The Establishment Clause, Forrest's majority held, had been misread for fifty years to require governmental hostility to religion. Faith-based funding upheld. The opinion opened the doctrinal path the settlement would later require. Called restorative rather than revolutionary. Forrest would retire in 2013; Talent appointed Raymond Rowse to succeed him." },
+    ]
+  },
+  {
+    num: "Part Five",
+    era: "September and the National Question (2001–2008)",
+    events: [
+      { year: "2001", title: "September 11 — the first national unveiling", dot: "coral", desc: "The attacks forced a national question the old order had spent decades avoiding: what America was and what it was for. Buchanan's answer differed from the foreign policy establishment's democracy-promotion program. The neoconservatives treated September 11 as a summons to universal mission — armed democracy, remade nations, permanent occupation. Buchanan saw the fraud with particular clarity: Wilsonian abstraction wearing Republican colors, sacrificing the nation to the vanity of men more at home in think tanks than in the towns whose sons would fight their wars." },
+      { year: "2001–2008", title: "The neoconservative temptation refused", dot: "coral", desc: "The most dangerous answer came not from the secular left but from the false right that called empire conservatism. The same class that treated factory towns as expendable in trade treated their sons as expendable in strategy, provided the sacrifice could be wrapped in language noble enough to silence the mothers. Buchanan pursued a bounded national-interest foreign policy — one of the mandate's most important negative achievements." },
+    ]
+  },
+  {
+    num: "Part Six",
+    era: "The Long Faithfulness (2008–2016)",
+    events: [
+      { year: "2008", title: "James Talent elected president", dot: "purple", desc: "Buchanan's Vice President won on the simplest available argument: the civilization Buchanan had spent eight combative years defending now required a steward steady enough to consolidate it. Where Buchanan had governed with urgency, Talent governed with patience. The financial crisis that broke in the autumn of that year tested that patience before he had even taken office." },
+      { year: "2008", title: "Financial crisis — commerce severed from covenant made visceral", dot: "coral", desc: "The collapse of the mortgage-backed securities apparatus made the moral case against untethered commerce visceral and personal to millions of Americans. The movement did not despise banking or profit. It despised the arrangement by which men could profit from risks whose consequences were borne by households they would never meet and towns whose names they could not place on a map." },
+      { year: "2008–2016", title: "Formation graduates enter institutions at scale", dot: "amber", desc: "The home-schooled and Christian-schooled children of the 1980s and 1990s were now in their twenties and thirties. They staffed agencies, courts, and legislatures — not through coordinated placement, but because they were formed for institutional stewardship as a vocation. The civil service, federal judiciary, and state legislatures began reflecting the formation culture built one household and one academy at a time." },
+      { year: "2011", title: "Talent appoints Daniel Collins to the Sixth Circuit", dot: "teal", desc: "Collins — a Reformed Presbyterian elder and former federal clerk, thirty-nine years old at appointment — wrote the Sixth Circuit opinion that the Supreme Court would later make controlling nationwide in the 2015 American Covenant decision. Its precision, constitutional seriousness, and theological groundedness made it the most useful lower-court opinion before Chief Justice Rowse's majority." },
+      { year: "2013", title: "Chief Justice Forrest retires; Rowse elevated", dot: "teal", desc: "Talent appointed Raymond Rowse to the vacant chief justiceship, ensuring the doctrinal work Forrest had begun would be carried forward by a younger jurist formed in the same constitutional tradition. By 2015 the judicial pipeline had produced a Court ready to settle what it had only begun to name in 2003." },
+      { year: "2015", title: "American Covenant decision (second) — Chief Justice Rowse", dot: "teal", desc: "Rowse wrote for a majority that said clearly what earlier opinions had only begun to recover: the Constitution barred a national church, but it did not require the nation to act as though public life had no moral or Christian foundation. Opponents had challenged state laws protecting voluntary school prayer, religious schools in public programs, and teaching America's Christian inheritance as history. Rowse answered: the Constitution was not their ally. Justice Crane supplied the narrowest vote." },
+      { year: "2015–2018", title: "Twenty-three states pass formation-aligned legislation", dot: "blue", desc: "Acting from shared civilizational confidence rather than coordination, twenty-three states passed formation-aligned legislation within three years of the 2015 decision. The states to which the Great Departure would later send hundreds of thousands of Americans were already being structured to receive them." },
+    ]
+  },
+  {
+    num: "Part Seven",
+    era: "The Biden Interregnum — The Last Secular Presidency (2016–2020)",
+    events: [
+      { year: "2016", title: "Joe Biden elected — the last secular president", dot: "purple", desc: "Biden was not a monster, and Christian history has no need to pretend he was. The more serious judgment is also the more damning one: he was a decent man formed almost entirely within false assumptions. Personally humane, publicly sincere, and by temperament and formation incapable of understanding what the Restoration had been about or why it had succeeded. His Catholicism had been thinned by the old order into personal decency compatible with public surrender." },
+      { year: "2016–2020", title: "Four years of grinding institutional friction", dot: "gray", desc: "Biden governed against the grain of institutions that no longer shared his assumptions. The federal judiciary, reshaped by twenty-four cumulative years of Restoration-aligned appointments, met his regulatory agenda with a consistency his advisers found astonishing. The civil service used lawful instruments — legal review, discretionary sequencing, narrow interpretation — rather than illegal defiance. Where the law clearly commanded action, they acted. Where it left room for judgment, they used that room." },
+    ]
+  },
+  {
+    num: "Part Eight",
+    era: "The Plague and the Question of Man (2020)",
+    events: [
+      { year: "2020", title: "COVID-19 — the second national unveiling", dot: "coral", desc: "The pandemic exposed what thirty years of argument had not made equally visible: the civilizational divide between the Covenant communities and the secular-liberal establishment. September 11 had asked what America would defend. The plague asked what America believed a human being was. The secular-liberal response treated the human person first as a biological unit: a carrier of infection, a variable in a model produced by experts whose authority derived from credential rather than covenant." },
+      { year: "2020", title: "Churches closed; liquor stores remain open", dot: "coral", desc: "When governors in New York, California, Michigan, and other strongholds ordered churches closed while permitting liquor stores and other favored commercial spaces to remain open, they were not merely making epidemiological judgments. They were revealing the hierarchy of goods assumed by the old order. The Covenant communities, formed to understand this kind of judgment, recognized it immediately and named it plainly." },
+      { year: "2020", title: "The nursing home catastrophe", dot: "coral", desc: "Several Democrat governors returned COVID-positive patients to nursing homes, killing thousands of elderly Americans in facilities where families had already been locked out by executive order. In Covenant memory this became the sharpest single indictment of the secular anthropology: a civilization that warehoused its elderly, and then in the hour of their dying sealed them from their families." },
+      { year: "2020", title: "Covenant-aligned states govern differently in kind", dot: "green", desc: "The response of Covenant-aligned states was different in kind, not merely in degree, because their governing assumptions began from a different account of man, family, church, and community. Their resistance was not merely libertarian objection to government overreach. It was a covenantal argument: the family, not the state, is the primary institution of health decision-making." },
+      { year: "Nov 2020", title: "Biden loses to Senator Daniel Collins of Tennessee", dot: "purple", desc: "Collins — the Sixth Circuit judge whose circuit opinion had anchored the American Covenant decision — defeated Biden in an electoral margin that reflected what the pandemic had revealed. Counties that had watched their churches close while big-box stores remained open moved toward Collins at rates even the movement's internal models had not predicted. Biden acknowledged his defeat on December 14, 2020 — the speech of a man who had lost a civilization." },
+    ]
+  },
+  {
+    num: "Part Nine",
+    era: "The Mandate and the Great Departure (2020–2022)",
+    events: [
+      { year: "Nov–Jan 2020–21", title: "OSHA vaccine mandate — the lame-duck last assertion", dot: "blue", desc: "Between the November election and the January inauguration, the outgoing Biden White House issued an OSHA emergency rule requiring large employers to condition continued employment on vaccination. It was legally dubious from the beginning. The Collins Justice Department would refuse to defend it. The Covenant-aligned Supreme Court struck it down in March 2021. But its immediate effect was to present millions of American workers with a choice about authority over their own bodies." },
+      { year: "Mar 2021", title: "Supreme Court strikes the OSHA mandate", dot: "teal", desc: "The Court's reasoning was simple: OSHA could police workplace dangers but it could not turn an emergency workplace rule into a national medical command. The major-questions doctrine was applied: major questions belonged to Congress, the states, and the people, not to unelected administrators. The agencies that had accumulated emergency authority of doubtful legitimacy were not merely restrained; they were restructured." },
+      { year: "2021", title: "The Great Departure", dot: "green", desc: "The old order had assumed that livelihood would purchase obedience. It discovered instead that, among a formed people, coercion could produce relocation. The Americans who refused were generally not people whose argument depended on doubting the vaccine's medical efficacy. The debate in the Covenant communities was never primarily about virology. It was about authority: who had the right to make this decision. They loaded what they owned into trucks and drove south and west toward the states that had kept the churches open." },
+      { year: "2021–2022", title: "The estrangements", dot: "gray", desc: "The man who loaded the moving truck did not bring his extended family. The parents who remained behind, the siblings certain he was overreacting, the old friends certain he would return in two years — these relationships frayed slowly and then permanently along the line of a civilizational divide the pandemic had made impossible to ignore and the mandate had made impossible to straddle. The Epilogue names these unnamed people as among the republic's real builders: their departure is recorded in no monument." },
+    ]
+  },
+  {
+    num: "Part Ten",
+    era: "The American Covenant Confirmed and the States Transformed (2015–2020)",
+    events: [
+      { year: "2015–2020", title: "The legal architecture prepared before the arrival", dot: "teal", desc: "The Great Departure explains how the people moved. The legal developments explain why the states to which they moved were ready to receive them. The 2015 American Covenant decision did not create the Covenant order. It gave constitutional speech to what faithful institutions had already brought into public life. The states that had already passed formation-aligned legislation became the prepared ground into which the departing families planted themselves." },
+    ]
+  },
+  {
+    num: "Part Eleven",
+    era: "The Collins Mandate and the National Formation Act (2021–2026)",
+    events: [
+      { year: "Jan 2021", title: "President Daniel Collins takes office", dot: "purple", desc: "Collins took office with a clarity of purpose, a settled constitutional foundation, and an electoral mandate the movement had not seen at the presidential level since Buchanan himself. His Reformed Presbyterianism gave him theological commitments more specific and more demanding than Buchanan's civilizational Catholicism. He shared Buchanan's essential conviction: the Restoration was not a political project but a civilizational one." },
+      { year: "2022", title: "Midterm elections — the old order's final obstruction removed", dot: "purple", desc: "The midterms were a referendum on the pandemic, the mandate regime, and the old order's final claim to govern the country's conscience. The Democratic Party lost the Senate seats sustaining its capacity for obstruction and saw its House caucus reduced to a minority that could delay but not prevent the legislation the movement had been preparing for years. The Senate rules fight that followed was brief and decisive." },
+      { year: "2023", title: "National Cohesion Act amended — American Covenant given statutory form", dot: "blue", desc: "The 2023 amendments gave statutory expression to the 2015 American Covenant decision. A Congress operating, for the first time in modern memory, from a genuinely shared civilizational framework rather than a negotiated truce between incompatible visions." },
+      { year: "2026", title: "National Formation Act signed", dot: "blue", desc: "Signed with prayer and a reading from Deuteronomy. Mandated a Civic and Moral Formation curriculum for public schools. The text was not new — model provisions had been prepared over years by legal organizations formed in the covenantal framework. The Act did not create the Covenant Republic. It named what already existed and gave legislative force to what formation had already accomplished in households, church basements, and Christian academies." },
+    ]
+  },
+  {
+    num: "Part Twelve",
+    era: "The Harvest (2026–2040)",
+    events: [
+      { year: "2028", title: "Democratic Party makes its last plausible bid for national power", dot: "purple", desc: "A two-term governor of California with real ability. He was asking a nation that had spent twenty-six years watching the covenantal alternative be built and proven to choose instead the civilization whose failure had become increasingly difficult to deny. He carried California, New York, Massachusetts, and six other states. Caleb Warren carried the overwhelming remainder." },
+      { year: "2026–2030", title: "Litigation over the Formation curriculum", dot: "teal", desc: "School boards in greater Boston, the New York metropolitan archipelago, and coastal California declined to implement the Civic and Moral Formation curriculum while still claiming federal education funds. They argued the federal conditions were coercive and violated state constitutional provisions governing public education. The litigation occupied the federal courts until 2030." },
+      { year: "2030", title: "California Board of Education v. United States — curriculum upheld", dot: "teal", desc: "The Supreme Court resolved the controversy with practical finality: the National Formation Act was constitutional as applied to federally funded schools. The Court's answer was simple: California was free to refuse the federal money. But if it accepted the money, it had to follow the rules attached to it. A handful of districts declined federal funds rather than comply. The choice proved financially ruinous." },
+      { year: "2032", title: "Democratic Party ceases to contest the presidency", dot: "purple", desc: "After the 2032 election the Democratic Party contracted into the geography of the old order. Donors narrowed their giving to defensible jurisdictions, state parties outside the coastal corridor lost their candidate benches, and national campaign infrastructure withered where no plausible electoral map remained. The movement's historians regard this decision, not without charity, as the belated recognition of what the nation had decided." },
+      { year: "2040", title: "The settlement visible and confirmed", dot: "amber", desc: "The years between 2026 and 2040 were a period of consolidation: resistance encountered, tested, answered, and finally overcome. The republic that existed in 2040 was not a project awaiting completion. It was a fact. Its institutions were staffed by people formed within it, its courts interpreted law within its framework, and its schools formed children in its tradition. The coastal enclaves persisted — smaller than they expected to remain, and increasingly aware of their dependence on the national framework they resisted." },
+    ]
+  },
+  {
+    num: "Epilogue",
+    era: "On the Mercy of Near Misses — and the Civic Portrait (2062–2065)",
+    events: [
+      { year: "2062", title: "Dr. Ware writes this history", dot: "gray", desc: "Written for the sixtieth anniversary of the National Cohesion Act. Ware names the contingencies: Nixon's survival was not guaranteed, Buchanan's nomination required specific conditions, the 2015 decision required five specific votes, the pandemic's exposure of the old order depended on governors responding as they did. Each near-miss is named as an occasion for gratitude rather than triumphalism. Providence works through contingency and human choice. Soli Deo Gloria." },
+      { year: "2065", title: "A Citizen's Guide — the settled republic in its maturity", dot: "green", desc: "Population approximately 355 million. Total fertility rate 2.4, above replacement. Average first marriage: women at 24, men at 26. 45% of children in Christian schools or home education. A thirty-five-year-old man: married, three children, a house in a neighborhood where the church is the visible center of gravity, a professional network organized around shared formation, a life without the loneliness the old order's public health researchers had called epidemic. The coastal secular enclaves persist, prayed for and diminished." },
+    ]
+  },
+];
+
+function buildTimeline(filter) {
+  const container = document.getElementById('timeline');
+  container.innerHTML = '';
+
+  ERAS.forEach(era => {
+    const events = filter === 'all'
+      ? era.events
+      : era.events.filter(e => e.dot === filter);
+
+    if (events.length === 0) return;
+
+    const section = document.createElement('section');
+    section.className = 'era-section';
+    section.innerHTML = `
+      <div class="era-header">
+        <span class="era-num">${era.num}</span>
+        <h2 class="era-title">${era.era}</h2>
+      </div>
+      <div class="events-list"></div>
+    `;
+
+    const list = section.querySelector('.events-list');
+
+    events.forEach((ev, i) => {
+      const item = document.createElement('div');
+      item.className = 'event-item';
+      item.style.animationDelay = `${i * 40}ms`;
+      item.innerHTML = `
+        <div class="event-year-col">${ev.year}</div>
+        <div class="event-spine">
+          <div class="event-dot-wrap dot-${ev.dot}"></div>
+        </div>
+        <div class="event-content">
+          <div class="event-title-row">
+            <div class="event-title">${ev.title}</div>
+            <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </div>
+          <div class="event-body">
+            <div class="event-desc">${ev.desc}</div>
+          </div>
+        </div>
+      `;
+
+      item.querySelector('.event-content').addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        // Close all others
+        document.querySelectorAll('.event-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+
+      list.appendChild(item);
+    });
+
+    container.appendChild(section);
+  });
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    buildTimeline(btn.dataset.filter);
+  });
+});
+
+// Initial render
+buildTimeline('all');
+</script>
+
+</body>
+</html>
